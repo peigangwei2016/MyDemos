@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">MyDemos</string>
+    <color name="blue">#0000ff</color>
+    <dimen name="top_padding">5dp</dimen>
+    <bool name="is_first_run">false</bool>
+    <array name="colors">
+        <item>#ff0000</item>
+        <item>#00ff00</item>
+        <item>#0000ff</item>
+    </array>
+
+    <string-array name="names">
+        <item>Sunny</item>
+        <item>Sundy</item>
+        <item>Tom</item>
+        <item>Jack</item>
+    </string-array>
+
+</resources>

@@ -9,7 +9,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="添加一个按钮"
-        android:id="@+id/add_but"
+        android:text="启动OtherActivity"
+        android:id="@+id/button"
         />
 </LinearLayout>

@@ -1,54 +1,33 @@
 package com.sunny.mydemos;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewParent;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements View.OnClickListener {
 
 
     private String TAG = "MainActivity";
 
-    private Button addBut;
+    private Button mButton;
     private LinearLayout ll;
+    private int requestCode=123;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        addBut = (Button) findViewById(R.id.add_but);
-        ll = (LinearLayout) findViewById(R.id.ll);
+        mButton = (Button) findViewById(R.id.button);
 
 
-        addBut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                新建一个Button
-                Button button = new Button(MainActivity.this);
-                button.setText("我是新添加的Button");
-//              将新建的Button添加到LinerLayout中
-                ll.addView(button, WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
-
-//                button.clearFocus();
-////                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-////                button.setLayoutParams(params);
-//                WindowManager windowManager = getWindowManager();
-//
-//                WindowManager.LayoutParams params = new WindowManager.LayoutParams();
-//                params.width= WindowManager.LayoutParams.MATCH_PARENT;
-//                params.height= WindowManager.LayoutParams.WRAP_CONTENT;
-//                params.x=0;
-//                params.y=0;
-//                windowManager.addView(button,params);
-            }
-        });
+        mButton.setOnClickListener(this);
 
     }
 
@@ -60,4 +39,35 @@ public class MainActivity extends Activity {
     }
 
 
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.button:
+                startOtherActivity();
+                break;
+        }
+    }
+
+    private void startOtherActivity() {
+//        使用显示的方法来启动Activity
+//        Intent _intent=new Intent(this,OtherActivity.class);
+
+//        使用隐式的方法来启动Activity
+        Intent _intent=new Intent( );
+        _intent.setAction("com.sunny.WATCHMOIVE");
+        _intent.putExtra("name","sunny");
+        _intent.setData(Uri.parse("http://www.google.com"));
+        startActivityForResult(_intent,  requestCode);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == 4321) {
+            Toast.makeText(MainActivity.this, data.getStringExtra("name"), Toast.LENGTH_SHORT).show();
+        }
+
+
+    }
 }

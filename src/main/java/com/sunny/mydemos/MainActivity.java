@@ -66,6 +66,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == 4321) {
             Toast.makeText(MainActivity.this, data.getStringExtra("name"), Toast.LENGTH_SHORT).show();
+
+
         }
 
 

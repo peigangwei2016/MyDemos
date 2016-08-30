@@ -3,7 +3,6 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 23
     buildToolsVersion '24.0.1'
-
     defaultConfig {
         applicationId "com.sunny.mydemos"
         minSdkVersion 17
@@ -19,6 +18,8 @@ android {
     }
     dexOptions {
         incremental true
+    }
+    productFlavors {
     }
 }
 

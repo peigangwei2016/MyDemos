@@ -12,16 +12,23 @@ import android.widget.TextView;
  */
 public class BActivity extends Activity {
     private static int mIndex=0;
-    private String TAG="BActivity";
+    private String TAG="Sunny";
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        Log.i(TAG, "BActivity onNewIntent instance="+mIndex+" TaskID="+getTaskId());
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task);
         ++mIndex;
-        Log.i(TAG, "instance="+mIndex+" TaskID="+getTaskId());
+        Log.i(TAG, "BActivity onCreate instance="+mIndex+" TaskID="+getTaskId());
 //        找到按钮，并启动AActivity
-        findViewById(R.id.start_a).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.startA).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(BActivity.this,AActivity.class);
@@ -29,14 +36,20 @@ public class BActivity extends Activity {
             }
         });
 //        找到按钮，并启动BActivity
-        findViewById(R.id.start_b).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.startB).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(BActivity.this,BActivity.class);
                 startActivity(intent);
             }
         });
-        TextView name = (TextView) findViewById(R.id.text_name);
+        TextView name = (TextView) findViewById(R.id.activityName);
         name.setText("BActivity");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i(TAG, "BActivity onDestroy instance="+mIndex+" TaskID="+getTaskId());
     }
 }

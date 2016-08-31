@@ -36,13 +36,18 @@
             android:configChanges="orientation|screenSize">
 
         </activity>
-        <activity android:name=".AActivity">
+        <activity android:name=".AActivity"
+
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".BActivity"></activity>
+        <activity
+            android:name=".BActivity"
+            android:launchMode="singleInstance"
+            ></activity>
     </application>
 
 </manifest>

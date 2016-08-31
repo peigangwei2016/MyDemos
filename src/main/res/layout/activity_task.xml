@@ -7,14 +7,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Start A"
-        android:id="@+id/start_a"
+        android:id="@+id/startA"
         android:layout_gravity="center_horizontal" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Start B"
-        android:id="@+id/start_b"
+        android:id="@+id/startB"
         android:layout_gravity="center_horizontal" />
 
     <TextView
@@ -22,13 +22,13 @@
         android:layout_height="wrap_content"
         android:textSize="25sp"
 
-        android:id="@+id/text_name"
+        android:id="@+id/activityName"
         android:layout_gravity="center_horizontal" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="启动摄者界面"
-        android:id="@+id/start_settin"
+        android:text="打开百度"
+        android:id="@+id/openBaidu"
         android:layout_gravity="center_horizontal" />
 </LinearLayout>

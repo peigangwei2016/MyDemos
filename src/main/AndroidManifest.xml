@@ -15,7 +15,7 @@
     <!--<uses-feature android:name="android.hardware.Camera"></uses-feature>-->
 
     <application
-        android:name=".MyApplication"
+        android:name=".activity.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -23,31 +23,37 @@
         android:theme="@style/AppTheme"
 
         >
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".OtherActivity">
+        <activity android:name=".activity.MainActivity">
+        </activity>
+
+        <activity android:name=".activity.OtherActivity">
             <intent-filter>
                 <action android:name="com.sunny.WATCHMOIVE" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <data android:scheme="http" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".LifeActivity"
+            android:name=".activity.LifeActivity"
             android:configChanges="orientation|screenSize">
-
         </activity>
-        <activity android:name=".AActivity"
 
-            >
+        <activity android:name=".activity.AActivity">
+        </activity>
+        <activity
+            android:name=".activity.BActivity"
+            android:launchMode="singleInstance"></activity>
+
+        <activity android:name=".services.ServiceActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".BActivity"
-            android:launchMode="singleInstance"
-            ></activity>
+
+        <service android:name=".services.SunnyService"/>
+        <service android:name=".services.SunnyIntentService"/>
     </application>
 
 </manifest>

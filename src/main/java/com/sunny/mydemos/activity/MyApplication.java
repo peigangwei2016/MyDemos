@@ -1,4 +1,4 @@
-package com.sunny.mydemos;
+package com.sunny.mydemos.activity;
 
 import android.app.Application;
 import android.content.res.Configuration;

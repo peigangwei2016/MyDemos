@@ -1,14 +1,14 @@
-package com.sunny.mydemos;
+package com.sunny.mydemos.activity;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.SystemClock;
-import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.sunny.mydemos.R;
 
 /**
  * Created by Administrator on 2016/8/28.

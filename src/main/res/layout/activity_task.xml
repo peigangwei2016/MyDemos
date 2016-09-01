@@ -31,4 +31,18 @@
         android:text="打开百度"
         android:id="@+id/openBaidu"
         android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="拨打10086"
+        android:id="@+id/call"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="启动Sunny Test"
+        android:id="@+id/openSunnyTest"
+        android:layout_gravity="center_horizontal" />
 </LinearLayout>

@@ -1,4 +1,4 @@
-package com.sunny.mydemos;
+package com.sunny.mydemos.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.sunny.mydemos.R;
 
 /**
  * Created by Administrator on 2016/8/29.
@@ -19,6 +21,8 @@ public class AActivity extends Activity {
     private Button startB;
     private TextView activityName;
     private Button openBaidu;
+    private Button call;
+    private Button openSunnyTest;
 
 
     @Override
@@ -31,6 +35,8 @@ public class AActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task);
+        this.openSunnyTest = (Button) findViewById(R.id.openSunnyTest);
+        this.call = (Button) findViewById(R.id.call);
         this.openBaidu = (Button) findViewById(R.id.openBaidu);
         this.activityName = (TextView) findViewById(R.id.activityName);
         this.startB = (Button) findViewById(R.id.startB);
@@ -68,7 +74,26 @@ public class AActivity extends Activity {
             }
         });
 
+//        拨打10086
+        call.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_CALL);
+                intent.setData(Uri.parse("tel:10086"));
+                startActivity(intent);
+            }
+        });
 
+//        打开自己定义的Activity
+
+        openSunnyTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent("com.sunny.test");
+                intent.setData(Uri.parse("sunny:HelloSunny"));
+                startActivity(intent);
+            }
+        });
 //        启动设置界面
 //        Intent intent=new Intent();
 //        intent.setAction("android.intent.action.MAIN");

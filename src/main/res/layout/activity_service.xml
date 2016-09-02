@@ -15,4 +15,18 @@
         android:text="停止服务"
         android:id="@+id/butStopService"
         android:layout_gravity="right" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BindeService"
+        android:id="@+id/butBindService"
+        android:layout_gravity="center_horizontal"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="UnBindService"
+        android:id="@+id/butUnBindService"
+        android:layout_gravity="center_horizontal"/>
 </LinearLayout>

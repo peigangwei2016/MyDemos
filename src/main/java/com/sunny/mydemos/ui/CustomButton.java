@@ -1,16 +1,13 @@
 package com.sunny.mydemos.ui;
 
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.os.Build;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Toast;
 
 /**
  * Created by Administrator on 2016/9/4.

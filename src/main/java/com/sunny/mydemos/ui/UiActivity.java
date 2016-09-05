@@ -69,7 +69,7 @@ public class UiActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-         mButton = new CustomButton(this);
+//         mButton = new CustomButton(this);
         /*LinearLayout linearLayout = new LinearLayout(this);
         ViewGroup.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         linearLayout.setOrientation(LinearLayout.VERTICAL);
@@ -79,7 +79,7 @@ public class UiActivity extends Activity {
         button.setText("Login");
         linearLayout.addView(button, LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);*/
 
-        setContentView(mButton);
+        setContentView(new DrawableView(this));
 
 //        mHandler.sendMessageDelayed(mHandler.obtainMessage(),200);
 //            mHandler.postDelayed(mRunnable,200);

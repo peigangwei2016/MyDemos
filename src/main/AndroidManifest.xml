@@ -58,10 +58,15 @@
         <service android:name=".services.MusicService"/>
 
         <activity android:name=".ui.UiActivity">
+
+        </activity>
+
+        <activity android:name=".ui.TextViewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
     </application>
 

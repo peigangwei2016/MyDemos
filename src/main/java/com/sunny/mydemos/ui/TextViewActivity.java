@@ -25,19 +25,39 @@ public class TextViewActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_textview);
         this.mTextView = (TextView) findViewById(R.id.mTextView);
-//        String html= "<font color='blue'>Toms</font><img src='http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/sign-check-icon.png'>";
-//        Html.ImageGetter imgGetter =new Html.ImageGetter() {
-//            @Override
-//            public Drawable getDrawable(String source) {
-//                Drawable drawable = getResources().getDrawable(R.drawable.icon);
-//                drawable.setBounds(0,0,drawable.getIntrinsicWidth(),drawable.getIntrinsicHeight());
-//                return drawable;
-//            }
-//        };
-//        Spanned spanned = Html.fromHtml(html, imgGetter, null);
+        showTextView();
+
+        showButton();
+
+
+
+
+    }
+
+    private void showButton() {
+
+    }
+
+    /**
+     * TextView的一些常用练习
+     */
+    private void showTextView() {
+/* 显示HTML
+               String html= "<font color='blue'>Toms</font><img src='http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/sign-check-icon.png'>";
+        Html.ImageGetter imgGetter =new Html.ImageGetter() {
+            @Override
+            public Drawable getDrawable(String source) {
+                Drawable drawable = getResources().getDrawable(R.drawable.icon);
+                drawable.setBounds(0,0,drawable.getIntrinsicWidth(),drawable.getIntrinsicHeight());
+                return drawable;
+            }
+        };
+        Spanned spanned = Html.fromHtml(html, imgGetter, null);*/
+
+        /*设置不同范围的显示风格
         SpannableStringBuilder spannableStringBuilder=new SpannableStringBuilder("#Sunny# 大家好！");
 
-        ImageSpan imageSpan=new ImageSpan(this,R.drawable.icon);
+        ImageSpan imageSpan=new ImageSpan(this, R.drawable.icon);
 
         ClickableSpan clickableSpan=new ClickableSpan() {
             @Override
@@ -45,11 +65,11 @@ public class TextViewActivity extends Activity {
                 Toast.makeText(TextViewActivity.this, "你点击了!", Toast.LENGTH_SHORT).show();
             }
         };
-        spannableStringBuilder.setSpan(clickableSpan,0,7,Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        spannableStringBuilder.setSpan(clickableSpan,0,7, Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
 
         spannableStringBuilder.setSpan(imageSpan,7,8,Spanned.SPAN_INCLUSIVE_INCLUSIVE);
 
-        mTextView.setText(spannableStringBuilder);
+        mTextView.setText(spannableStringBuilder);*/
 
     }
 }

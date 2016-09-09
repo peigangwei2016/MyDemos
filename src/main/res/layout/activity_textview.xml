@@ -26,7 +26,39 @@
         android:layout_height="wrap_content"
         android:background="@drawable/but_bg"
         android:text="点击这个按钮，有惊喜呦！"
-        android:id="@+id/button2"/>
+        android:id="@+id/mButton"/>
+
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOn="开"
+        android:textOff="关"
+        android:id="@+id/mToggleButton"
+        android:checked="false"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="是否允许加入云计划？"
+        android:id="@+id/isJoinCloud"
+        android:checked="false"/>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="男"
+            />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="女"
+            />
+    </RadioGroup>
 
 
 </LinearLayout>

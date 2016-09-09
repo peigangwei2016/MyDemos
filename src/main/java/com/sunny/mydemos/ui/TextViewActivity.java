@@ -1,16 +1,14 @@
 package com.sunny.mydemos.ui;
 
 import android.app.Activity;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.text.Html;
-import android.text.SpannableStringBuilder;
-import android.text.Spanned;
-import android.text.style.ClickableSpan;
-import android.text.style.ImageSpan;
 import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import com.sunny.mydemos.R;
 
@@ -19,23 +17,79 @@ import com.sunny.mydemos.R;
  */
 public class TextViewActivity extends Activity {
     private android.widget.TextView mTextView;
+    private android.widget.Button mButton;
+    private android.widget.ToggleButton mToggleButton;
+    private android.widget.CheckBox isJoinCloud;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_textview);
+        this.isJoinCloud = (CheckBox) findViewById(R.id.isJoinCloud);
+        this.mToggleButton = (ToggleButton) findViewById(R.id.mToggleButton);
+        this.mButton = (Button) findViewById(R.id.mButton);
         this.mTextView = (TextView) findViewById(R.id.mTextView);
-        showTextView();
+//        showTextView();
+//
+//        showButton();
 
-        showButton();
 
+//        showToggleButton();
 
+        showCheckBox();
 
 
     }
 
-    private void showButton() {
+    private void showCheckBox() {
+        isJoinCloud.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+                    Toast.makeText(TextViewActivity.this, "选中！", Toast.LENGTH_SHORT).show();
 
+                }else {
+                    Toast.makeText(TextViewActivity.this, "没有选中！", Toast.LENGTH_SHORT).show();
+
+                }
+            }
+        });
+    }
+
+    /**
+     * ToggleButton的常用练习
+     */
+    private void showToggleButton() {
+        mToggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked)
+                    Toast.makeText(TextViewActivity.this, "开", Toast.LENGTH_SHORT).show();
+                else
+                    Toast.makeText(TextViewActivity.this, "关", Toast.LENGTH_SHORT).show();
+
+
+            }
+        });
+    }
+
+    /**
+     * Button的事件练习
+     */
+    private void showButton() {
+        mButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(TextViewActivity.this, "onClick!", Toast.LENGTH_SHORT).show();
+            }
+        });
+        mButton.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Toast.makeText(TextViewActivity.this, "onLongClick!", Toast.LENGTH_SHORT).show();
+                return true;
+            }
+        });
     }
 
     /**

@@ -3,9 +3,12 @@ package com.sunny.mydemos.ui;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
@@ -20,11 +23,15 @@ public class TextViewActivity extends Activity {
     private android.widget.Button mButton;
     private android.widget.ToggleButton mToggleButton;
     private android.widget.CheckBox isJoinCloud;
+    private android.widget.RadioGroup mSex;
+    private android.widget.Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_textview);
+        this.spinner = (Spinner) findViewById(R.id.spinner);
+        this.mSex = (RadioGroup) findViewById(R.id.mSex);
         this.isJoinCloud = (CheckBox) findViewById(R.id.isJoinCloud);
         this.mToggleButton = (ToggleButton) findViewById(R.id.mToggleButton);
         this.mButton = (Button) findViewById(R.id.mButton);
@@ -36,9 +43,31 @@ public class TextViewActivity extends Activity {
 
 //        showToggleButton();
 
-        showCheckBox();
+//        showCheckBox();
 
+//        showRadioGroup();
+        
+        showSpinner();
 
+    }
+
+    private void showSpinner() {
+//        创建数据源
+        String[] names = getResources().getStringArray(R.array.names);
+//        创建Adapter
+        ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,android.R.layout.simple_dropdown_item_1line,names);
+//        绑定Adapter和Spinner的连接
+        spinner.setAdapter(adapter);
+    }
+
+    private void showRadioGroup() {
+        mSex.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                Toast.makeText(TextViewActivity.this, "id=" + checkedId, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void showCheckBox() {

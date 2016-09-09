@@ -44,6 +44,7 @@
         android:checked="false"/>
 
     <RadioGroup
+        android:id="@+id/mSex"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -59,6 +60,14 @@
             android:text="女"
             />
     </RadioGroup>
+
+    <Spinner
+        android:dropDownSelector="@drawable/dropdown_bg"
+
+        android:spinnerMode="dropdown"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner"/>
 
 
 </LinearLayout>

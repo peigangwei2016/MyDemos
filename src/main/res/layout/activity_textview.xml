@@ -15,9 +15,9 @@
         android:marqueeRepeatLimit="marquee_forever"
         android:singleLine="true"
         android:focusable="true"
+        style="@style/MyFontStyle"
         android:focusableInTouchMode="true"
-        android:textColor="@color/black"
-        android:textSize="16sp"
+
         android:textColorLink="@color/blue"
         />
 
@@ -60,7 +60,6 @@
             android:text="女"
             />
     </RadioGroup>
-
     <Spinner
         android:dropDownSelector="@drawable/dropdown_bg"
 
@@ -68,6 +67,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/spinner"/>
+
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        style="@style/MyProgressBar"
+        android:progress="50"
+        android:id="@+id/progressBar"
+        android:indeterminate="false"/>
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ratingBar"/>
 
 
 </LinearLayout>

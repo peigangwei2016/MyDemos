@@ -1,19 +1,26 @@
 package com.sunny.mydemos.ui;
 
 import android.app.Activity;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RadioGroup;
+import android.widget.RatingBar;
+import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.sunny.mydemos.R;
+
+import java.util.ArrayList;
 
 /**
  * Created by Administrator on 2016/9/5.
@@ -25,11 +32,17 @@ public class TextViewActivity extends Activity {
     private android.widget.CheckBox isJoinCloud;
     private android.widget.RadioGroup mSex;
     private android.widget.Spinner spinner;
+    private android.widget.ProgressBar progressBar;
+    private android.widget.SeekBar seekBar;
+    private android.widget.RatingBar ratingBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_textview);
+        this.ratingBar = (RatingBar) findViewById(R.id.ratingBar);
+        this.seekBar = (SeekBar) findViewById(R.id.seekBar);
+        this.progressBar = (ProgressBar) findViewById(R.id.progressBar);
         this.spinner = (Spinner) findViewById(R.id.spinner);
         this.mSex = (RadioGroup) findViewById(R.id.mSex);
         this.isJoinCloud = (CheckBox) findViewById(R.id.isJoinCloud);
@@ -46,8 +59,17 @@ public class TextViewActivity extends Activity {
 //        showCheckBox();
 
 //        showRadioGroup();
-        
-        showSpinner();
+
+//        showSpinner();
+
+//        showSeekBar();
+    }
+
+    private void showSeekBar() {
+        Drawable ic = getResources().getDrawable(R.drawable.handle);
+        ic.setBounds(0, 0, ic.getIntrinsicWidth(), ic.getIntrinsicHeight());
+
+        seekBar.setThumb(ic);
 
     }
 
@@ -55,9 +77,30 @@ public class TextViewActivity extends Activity {
 //        创建数据源
         String[] names = getResources().getStringArray(R.array.names);
 //        创建Adapter
-        ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,android.R.layout.simple_dropdown_item_1line,names);
+//        ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,android.R.layout.simple_dropdown_item_1line,names);
+//        使用自定义Adapter
+        ArrayList<User> users = new ArrayList<User>();
+        users.add(new User(R.drawable.ic_zjl, "周杰伦", "台湾"));
+        users.add(new User(R.drawable.ic_ldh, "刘德华", "香港"));
+        users.add(new User(R.drawable.ic_lzl, "林志玲", "台湾"));
+        UserAdapter adapter = new UserAdapter(this, users);
 //        绑定Adapter和Spinner的连接
         spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (view instanceof LinearLayout) {
+                    TextView nameView = (TextView) view.findViewById(R.id.name);
+                    Toast.makeText(TextViewActivity.this, nameView.getText(), Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
     }
 
     private void showRadioGroup() {

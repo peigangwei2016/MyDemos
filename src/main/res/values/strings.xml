@@ -4,6 +4,7 @@
     <color name="blue">#0000ff</color>
     <dimen name="top_padding">5dp</dimen>
     <bool name="is_first_run">false</bool>
+	<string name="sunny">Hi Sunny</string>
     <array name="colors">
         <item>#ff0000</item>
         <item>#00ff00</item>
